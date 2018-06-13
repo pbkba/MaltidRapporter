@@ -1,0 +1,11 @@
+﻿<p>
+    <label for="kbaCategories">Välj grupp</label>
+    <select class="form-control" id="kbaCategories" [(ngModel)]="selectedCategory" (ngModelChange)="updateCategory()">
+        <option *ngFor="let kategori of kategorier" [selected]="kategori == selectedCategory" value="{{ kategori }}">{{ kategori }}</option>
+    </select>
+</p>
+
+
+    <!--select class="form-control" *ngIf="selectedCategory" [(ngModel)]="selectedType">
+        <option *ngFor="let type of getTypes(selectedCategory)"
+    </select-->

@@ -1,0 +1,25 @@
+@media (max-width: 767px) {
+    /* On small screens, the nav menu spans the full width of the screen. Leave a space for it. */
+    .body-content {
+        padding-top: 50px;
+    }
+    
+}
+
+.kba-header {
+    font-size: 200%;
+    font-weight: bold;
+    float: left;
+    width: 400px;
+    height: 100px;
+    vertical-align: bottom;
+}
+
+.kba-logo {
+    background-image: url('~/dist/kungsbacka_logo.svg');
+    background-repeat: no-repeat;
+    width: 260px;
+    height: 100px;
+    float: right;
+}
+

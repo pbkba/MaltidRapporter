@@ -1,0 +1,38 @@
+﻿<p>
+    <button class="btn btn-default" (click)="new()"><span class="glyphicon glyphicon-plus"></span></button>
+    <button class="btn btn-info" (click)="updateReports()"><span class="glyphicon glyphicon-lamp"></span></button>
+</p>
+<div class="panel-group" *ngIf="categories.portionstyper">
+    <div class="panel panel-default" *ngFor="let report of reverse(reports); trackBy:idTracker" >
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-sm-4" (click)="editMode(report.rapport_ID, false)" (mouseenter)="log(report.rapport_ID)">
+                    <span *ngIf="!report.editMode">{{ categories.getType(report.portionstyp_ID).portionstyp }}</span>
+                    <select class="form-control" *ngIf="report.editMode" [(ngModel)]="report.portionstyp_ID">
+                        <option *ngFor="let portionstyp of categories.getTypes(categories.selectedCategory)" [selected]="portionstyp.portionstyp_ID == report.portionstyp_ID" ngValue="{{ portionstyp.portionstyp_ID }}">{{ portionstyp.portionstyp }}</option>
+                    </select>
+                </div>
+                <div class="col-sm-4">
+                    <span *ngIf="!report.editMode">{{ report.antal }}</span>
+                    <input type="number" class="form-control" [(ngModel)]="report.antal" *ngIf="report.editMode" />
+                </div>
+                <div class="col-sm-4">
+                    <button class="btn btn-default btn-sm" *ngIf="!report.editMode" (click)="editMode(report.rapport_ID, false)">
+                        <span class="glyphicon glyphicon-edit"></span>
+                    </button>
+                    <div class="btn-group" *ngIf="report.editMode">
+                        <button class="btn btn-success btn-sm" (click)="save(report.rapport_ID)">
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </button>
+                        <button class="btn btn-danger btn-sm" (click)="delete(report.rapport_ID)">
+                            <span class="glyphicon glyphicon-minus"></span>
+                        </button>
+                        <button class="btn btn-sm" (click)="cancel(report.rapport_ID)">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

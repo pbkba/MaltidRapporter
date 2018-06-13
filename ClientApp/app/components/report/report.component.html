@@ -1,0 +1,10 @@
+﻿<div class="panel-body">
+    <div class="row">
+        <div class="col-md-4">
+            <span>{{ reports.categories.getType(report.portionstyp_ID).portionstyp }}</span>
+            <!--select [(ngModel)]="report.portionstyp_ID" *ngIf="report.editMode"></select-->
+        </div>
+        <div class="col-md-4">{{ antal }}</div>
+        <div class="col-md-4"><button (click)="editMode(report.rapport_ID)">Bepa</button></div>
+    </div>
+</div>

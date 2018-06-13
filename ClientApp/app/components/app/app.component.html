@@ -1,0 +1,12 @@
+<div class='container'>
+    <div class="row">
+        <div class="kba-header">M&aring;ltidsrapportering</div>
+        <div class="kba-logo"></div>
+    </div>
+    <div class='body-content'>
+        <categories #cat></categories>
+        <groups #grp [categories]="cat"></groups>
+        <report-date #rptdate></report-date>
+        <reports [categories]="cat" [group]="grp.selectedGroup" [reportdate]="rptdate.curr"></reports>
+    </div>
+</div>

@@ -1,0 +1,6 @@
+﻿<p>
+    <label for="kbaVerksamheter">Välj verksamhet</label>
+    <select class="form-control" id="kbaVerksamheter" [(ngModel)]="selectedGroup" (ngModelChange)="updateGroup()" *ngIf="categories.selectedCategory">
+        <option *ngFor="let group of getGroups(categories.selectedCategory)" value="{{ group.verksamhet_ID }}">{{ group.namn }}</option>
+    </select>
+<p>

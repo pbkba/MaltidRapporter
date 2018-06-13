@@ -1,0 +1,4 @@
+﻿<p>
+    <label for="kbaReportDate">Rapportdatum</label>
+    <input type="date" class="form-control" [ngModel]="today | date: 'yyyy-MM-dd'" 
+                 (ngModelChange)="curr = $event" (ngModelOptions)="{ timezone: 'sv-SE' }" /></p>
